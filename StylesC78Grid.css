@@ -3,7 +3,7 @@
     --c78orange: #EB6612;
     --c78black: black;
     --wramTransparent: #13121200;
-    --linearGradientC78: linear-gradient(to right,#FFD333 30%,#EB6612,black);
+    --linearGradientC78: linear-gradient(to right,#FFD333 30%,#EB6612);
     --afterLinearGradientC78: -webkit-text-fill-color: transparent; -webkit-background-clip: text;
     --C78firstFont: '18 Army';
     --C78secondFont: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -17,7 +17,7 @@ html body header{
     padding: 0;   
 }
 main {
-    background: linear-gradient(to bottom,#FFD333 30%,#EB6612,black);;
+    background: linear-gradient(to bottom,hsla(47, 100%, 60%, 0.609) 30%,hsla(23, 86%, 50%, 0.555),hsla(0, 0%, 0%, 0.835));
 }
 header {
     z-index:99;
@@ -28,28 +28,27 @@ header {
     height: 170px; 
     box-shadow: 0 0 10px ;
     font-family: var(--C78secondFont);
-    grid-gap: 0;
-    grid-template-columns: 15% 11% 4% 58% 18%;
-    grid-template-rows: repeat(5, 85px);
+    grid-template-columns: 15% 11% 4% 56% 20%;
+    grid-template-rows: repeat(5, 57px);
     grid-template-areas: 
     "logoC78 figcaption . . idButton"
     ". . navBar navBar .";
+    grid-gap: 0;
     display: flex;
     flex-direction: row; 
     display: inline-grid;    
 }
-
 .logo {
     grid-column: 1/2;
-    grid-row: 1/2;
+    grid-row: 1/3;
     display: flex;
     flex-direction: row;  
 }
 .logoC78 {
     z-index:100;
     max-width: 15%; 
-    min-width: 200px;
-   
+    min-width: 200px; 
+    display: inline-block; 
 }
 figcaption{
     grid-column: 2/3;
@@ -63,30 +62,30 @@ figcaption{
     grid-row: 1;
     font-family: '18 army';
     margin-top:5%;
-    font-weight: bold;  
-    
+    margin-right: 10%;
+    text-align: left;
+    font-weight: bold;     
 }
 .navBar {
     grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row: 2;
+    grid-column-end: 6;
+    grid-row: 2/3;
     background: var(--linearGradientC78);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text;   
-    position: relative; 
-    
+    text-align: left;  
+    vertical-align: top;
+   
 }
-.navBer ul{
-    background-color: black;
-    background-size: 100px 100px;  
-    position: relative;
-
+.navBar ul{
+    
 }
 .navBar li{
     list-style:none;
     list-style-type: none;
     display: inline-block;
     margin: 2% 1%;    
+
 }
 .navBar a {
     text-decoration:none;
@@ -98,7 +97,7 @@ figcaption{
     padding: 3px 8px;
     box-shadow: 0 0 5px #FFD333;
     font-weight: bold;  
-     
+    background-color: rgba(0, 0, 0, 0.212);
 }
 .navBar li:hover{
     transition: transform 200ms;
@@ -107,155 +106,179 @@ figcaption{
     background: linear-gradient(to top,#FFD333 30%,#EB6612);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text; 
-
 } 
 .dropDownMenu {
     display: none;
 }
-.homeImage {
-    max-height: 592px; 
-    text-align: left;
-    grid-column: 1/2;
-    grid-row: 2/4; 
-}
 .img1{
-    max-height: 300px; 
     display: none;
 }
-
-@media screen AND (max-width:1285px) AND (min-width:1000px) {
-    .container {
-        display: grid;
-        grid-gap: 0;
-        grid-template-columns: 20% 9% 9% 44% 18%;
-        grid-template-rows: repeat(5, 85px) auto;
-        align-items: center;
-        justify-items: center;
-    }   
-    .img1{
-        max-height: 300px; 
-    }
-     header {
-        grid-column: auto;
-        grid-row: 1/2; 
-        z-index:99;
-        background-image: url(header\ fond.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        max-height: 190px; 
-        min-width: 100%;
-        display: inline-block;
-        box-shadow: 0 0 10px #FFD333;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    .logo {
-        z-index:100;
-        grid-column: 1;
-        grid-row: 1/2;
-        margin-top: 40%;
-        margin-left: 0%;
-        max-width: 15%; 
-        min-width: 200px;
-    }
-    .logoC78 {
-        z-index:100;
-        margin-top:5%;
-        margin-left:5%;
-        max-width: 15%; 
-        min-width: 200px;
-        margin-right: 0;  
-    }
-    figcaption {
+article {
+   display: flex;
+}
+.homeImage{
+    max-width:20%;
+    justify-content: flex-end;   
+}
+@media screen AND (max-width:1074px)  AND (min-width:830px){
+    figcaption{
         grid-column: 2/3;
         grid-row: 1;
+        margin-top:10%;
+        font-family: var(--C78firstFont);
+        font-weight: bold;  
+    }
+    .idButton {
+        grid-column: 4/5;
+        grid-row: 1;
+        font-family: '18 army';
+        margin-top:5%;
+        padding-top: 2%; 
+        font-weight: bold;
         text-align: left;
     }
-    
-    .idButton {
-        grid-column: 5;
-        grid-row: 1;
-    }
     .navBar {
-        grid-column: 3/9;
-        grid-row: 2;
-        list-style: none;
+        grid-column-start: 4;
+        grid-column-end: 6;
+        grid-row: 2/3;
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;   
         text-align: right;
-        margin-left: 50%;
+        padding-top: 2%; 
+        padding-right: 10%; 
     }
-    .navBar ul{
-    grid-column: 3/9;
-    grid-row: 2;
-    display: inline-block;
-    list-style-type: none;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 10px;
-    margin-inline-end: 0px;
+    .navBarr ul{
+        width: 110%;
     }
-    .navBar il{
-    margin-left: 30%;
-    margin-left: 50%;
+    .navBar li{
+        list-style:none;
+        list-style-type: none;
+        display: inline-block;
+        margin: 2% 1%;    
     }
     .navBar a {
-        text-decoration: none;
-        width: 110%;
-        font-size: 17px;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        color: rgba(12, 2, 2, 0.479);
-        border: 2px solid #1312121f;
+        text-decoration:none; 
+        font-family: var(--C78firstFont);
+        border: 2px solid var(--wramTransparent);
         border-radius: 8px;
         padding: 3px 8px;
         box-shadow: 0 0 5px #FFD333;
-        margin-left: 40%;
-     }        
-           
+        font-weight: bold;  
+        font-size: 0.9rem;     
+    }
+    .navBar li:hover{
+        transition: transform 200ms;
+        transform: scale(1.1);
+        box-shadow: 1px 1px 0spx 2px black;
+        background: linear-gradient(to top,#FFD333 30%,#EB6612);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text; 
+    } 
 }
-.w3-bar{
+@media screen AND (max-width:830px) AND (min-width:768px){
+    header {
+        grid-template-columns: 15% 11% 4% 15% 15% 26% 20%;
+        grid-template-rows: repeat(5, 57px);
+        grid-template-areas: 
+        "logoC78 figcaption . . idButton"
+        ". . navBar navBar .";
+        grid-gap: 0;
+        display: flex;
+        flex-direction: row; 
+        display: inline-grid;    
+    }
+    .logoC78{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+    figcaption {
         grid-column: 3/4;
-        grid-row: 4;
+        grid-row: 1;
+    }
+    .idButton {
+        grid-column: 4/6;
+        grid-row: 1;
+        font-family: '18 army';
+        margin-top:13%;
+        margin-left: 3%;
+        padding-top: 0; 
+        font-weight: bold;
         text-align: center;
-        margin-left: 20%;
-        margin-right: 20%;
+    }
+    .navBar {
+        display: inline;
+        grid-column: 2/8;
+        grid-row: 2/3;
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        text-align: left;
+        margin-left: 18%;
+        margin-top: 1%; 
+    }
+    .navBar li {
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        font-weight: bold;
+    }
+    .navBar a {
+        font-size: 0.8rem;
+        text-shadow: 3px 3px 10px #000,
+    }    
 }
-.w3-bar-item  {
-    text-decoration: none;
-    width: 110%;
-    font-size: 17px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgba(12, 2, 2, 0.479);
-    border: 2px solid #1312121f;
-    border-radius: 8px;
-    padding: 3px 8px;
-    box-shadow: 0 0 5px #FFD333;
-    background-color: rgba(0, 0, 0, 0);
- }  
-.w3-button {
-    text-decoration: none;
-    width: 110%;
-    font-size: 17px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgba(12, 2, 2, 0.479);
-    border: 2px solid #1312121f;
-    border-radius: 8px;
-    padding: 3px 8px;
-    box-shadow: 0 0 5px #FFD333;
-    background-color: rgba(0, 0, 0, 0);
- }  
- .w3-mobile{
-    text-decoration: none;
-    width: 110%;
-    font-size: 17px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgba(12, 2, 2, 0.479);
-    border: 2px solid #1312121f;
-    border-radius: 8px;
-    padding: 3px 8px;
-    box-shadow: 0 0 5px #FFD333;
-    background-color: rgba(0, 0, 0, 0);
- }  
+@media screen AND (max-width:768px) and (min-width:425px){
+    header {
+        grid-template-columns: 40% 60%;
+        grid-template-rows: repeat(5, 57px);
+        grid-template-areas: 
+        "logoC78 figcaption . . idButton"
+        ". . navBar navBar .";
+        grid-gap: 0;
+        display: flex;
+        flex-direction: row; 
+        display: inline-grid;    
+    }
+    figcaption{
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 2%;
+        margin-left: 10%;
+        font-family: var(--C78firstFont);
+        font-weight: bold; 
+        text-align: center; 
+    }
+    .idButton {
+        grid-column: 2;
+        grid-row: 1;
+        font-family: '18 army';
+        margin-top:0;
+        margin-left: 5%;
+        position: relative;
+        top:5px;
+        font-weight: normal;
+        text-align: center;
+    }
+    .navBar {
+        grid-column:2;
+        grid-row: 2/3;
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-right: 15%;
+        margin-top: 5%;     
+    }
+    .navBar li {
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        font-weight: bold;
+    }
+     
+}
 
-@media screen AND (max-width:999px) AND (max-width:768px) {
 
 
     .dropdown li {
