@@ -14,10 +14,14 @@
 }
 html body header{
     margin: 0;
-    padding: 0;   
+    padding: 0; 
 }
 main {
     background: linear-gradient(to bottom,hsla(47, 100%, 60%, 0.609) 30%,hsla(23, 86%, 50%, 0.555),hsla(0, 0%, 0%, 0.835));
+    height : 400vh; 
+    margin: 0;
+    padding: 0;
+    margin-top: -10%; 
 }
 header {
     z-index:99;
@@ -29,7 +33,7 @@ header {
     box-shadow: 0 0 10px ;
     font-family: var(--C78secondFont);
     grid-template-columns: 15% 11% 4% 56% 20%;
-    grid-template-rows: repeat(5, 57px);
+    grid-template-rows: repeat(9, 57px);
     grid-template-areas: 
     "logoC78 figcaption . . idButton"
     ". . navBar navBar .";
@@ -66,17 +70,100 @@ figcaption{
     text-align: left;
     font-weight: bold;     
 }
+.searchBox {
+    position: relative;
+    top: 5%;
+    left: 30%;
+    grid-column: 4;
+    grid-row: 4;
+    font-family: var(--C78secondFont);
+    font-weight: lighter;
+    background: rgba(0, 0, 0, 0.575);
+    height: 40px;
+    width: 50px;
+    border-radius: 40px;
+    padding:5px;
+    text-align: center;
+    transition: 0.3s;
+}
+.searchBox:hover .searchTxt {
+    width: 220px;
+    padding: 0 6px;
+    line-height: 40px;
+    width: 9rem;
+    position: absolute;
+    bottom:1px;
+    right:16rem;
+}
+.searchBox:hover {
+    font-family: var(--C78secondFont);
+    background: rgba(0, 0, 0, 0.575);
+    height: 40px;
+    width: 220px;
+    border-radius: 40px;
+    padding:5px;
+    text-align: center;
+}
+.searchBtn:hover{
+    background: white;
+}
+.searchBtn {
+    color:  var(--c78yellow);
+    float: right;
+    width: 40px;
+    height: 30px;
+    border-radius: 40px;
+    background:var(--c78orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+.searchIcon{
+    max-width:60%;
+}
+.searchTxt {
+    border: none;
+    background: none;
+    outline: none;
+    float:left; 
+    padding: 0;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: normal;
+    font-size:15px;
+    transition: 0.1s;
+    line-height: 40px;
+    width: 0rem;
+    position: absolute;
+    bottom:1px;
+    left: 2rem;
+}
 .navBar {
     grid-column-start: 3;
     grid-column-end: 6;
-    grid-row: 2/3;
+    grid-row: 1/3;
+    text-align: left;  
+    position: relative;
+    bottom:-60px;
+    z-index: 1;
     background: var(--linearGradientC78);
     -webkit-text-fill-color: transparent; 
     -webkit-background-clip: text;   
-    text-align: left;  
-    vertical-align: top;
-   
 }
+.navBar::before {
+    content:'';
+    background: rgba(0, 0, 0, 0.171);
+    display: block;
+    width: 60%;
+    height: 170px;
+    position: absolute;
+    top: -60px;
+    left: 90px;
+    z-index: -1;
+    transform: skew(-40deg);
+}
+
 .navBar ul{
     
 }
@@ -97,7 +184,6 @@ figcaption{
     padding: 3px 8px;
     box-shadow: 0 0 5px #FFD333;
     font-weight: bold;  
-    background-color: rgba(0, 0, 0, 0.212);
 }
 .navBar li:hover{
     transition: transform 200ms;
@@ -117,8 +203,13 @@ article {
    display: flex;
 }
 .homeImage{
-    max-width:20%;
-    justify-content: flex-end;   
+    max-width:30%;
+    position: absolute;
+    top: 55%;
+    left:70%;
+}
+.homeImage:hover {
+    translate: translate-x(-100) 5s;
 }
 @media screen AND (max-width:1074px)  AND (min-width:830px){
     figcaption{
@@ -144,9 +235,23 @@ article {
         background: var(--linearGradientC78);
         -webkit-text-fill-color: transparent; 
         -webkit-background-clip: text;   
-        text-align: right;
-        padding-top: 2%; 
-        padding-right: 10%; 
+        text-align: right;  
+        position: relative;
+        bottom:-3px;
+        right: 10%;
+        z-index: 1;
+    }
+    .navBar::before {
+        content:'';
+        background: rgba(0, 0, 0, 0.171);
+        display: block;
+        width: 60%;
+        height: 170px;
+        position: absolute;
+        top: -60px;
+        left: 35%;
+        z-index: -1;
+        transform: skew(-40deg);
     }
     .navBarr ul{
         width: 110%;
@@ -214,8 +319,11 @@ article {
         -webkit-text-fill-color: transparent; 
         -webkit-background-clip: text;
         text-align: left;
-        margin-left: 18%;
-        margin-top: 1%; 
+        margin-left: 12%;
+        top: 1%;
+    }
+    .navBar::before {
+        display: none;
     }
     .navBar li {
         background: var(--linearGradientC78);
@@ -258,7 +366,7 @@ article {
         position: relative;
         top:5px;
         font-weight: normal;
-        text-align: center;
+        text-align: right;
     }
     .navBar {
         grid-column:2;
@@ -268,7 +376,9 @@ article {
         -webkit-background-clip: text;
         text-align: center;
         margin-right: 15%;
-        margin-top: 5%;     
+        margin-top: 5%;
+        position: relative;
+        bottom:20px;     
     }
     .navBar li {
         background: var(--linearGradientC78);
@@ -276,6 +386,16 @@ article {
         -webkit-background-clip: text;
         font-weight: bold;
     }
+    .navBar li {
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        font-weight: bold;
+    }
+    .navBar a {
+        font-size: 0.9rem;
+        text-shadow: 3px 3px 10px #000;
+    }    
      
 }
 
@@ -289,8 +409,8 @@ article {
         text-decoration: none;
     }
     .navbarr {
-        grid-column: 2;
-        grid-row: 2;
+        position: relative;
+        top: 10%;
         background-color: rgba(6, 7, 7, 0);
         color: rgba(14, 11, 11, 0);
         
@@ -306,12 +426,15 @@ article {
         display: flex;
         gap: 1em;
         font-size: 18px;
+        position: relative;
+        left: 60px;
     }
     .menu li:hover {
         transform: scale(1.1);
         transition: 0.3s ease;
         background-color: #ffd33391;
         border-radius: 8px;
+    
     }
     .menu li {
         padding: 5px 14px;
@@ -321,8 +444,7 @@ article {
         
     }
     .dropdown {
-        
-        background: linear-gradient(to top,#FFD333 30%,#EB6612,black);
+        background: linear-gradient(to top,#EB6612,black);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         padding: 0.3em 0;
@@ -331,10 +453,12 @@ article {
         padding: 3px 8px;
         box-shadow: 0 0 5px #FFD333;
         position: absolute; /*WITH RESPECT TO PARENT*/
+        left: 1px;
         display: none;
         border-radius: 8px;
         top: 35px;
         background-color: rgb(139, 79, 1);
+        color:#000;
     } 
     .dropdown li + li {
         margin:1px;
@@ -346,12 +470,13 @@ article {
     } 
     .dropdown li:hover {
         transform: scale(1.2);
+        color:black;
+   
     }
     .services:hover .dropdown {
         display: block;
         
     }
-}
 
 
 
