@@ -14,11 +14,13 @@
 }
 html body header{
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    width: 100vw;
 }
 main {
     background: linear-gradient(to bottom,hsla(47, 100%, 60%, 0.609) 30%,hsla(23, 86%, 50%, 0.555),hsla(0, 0%, 0%, 0.835));
     height : 400vh; 
+    width: 100vw;
     margin: 0;
     padding: 0;
     margin-top: -10%; 
@@ -71,15 +73,15 @@ figcaption{
     font-weight: bold;     
 }
 .searchBox {
+    grid-column: 5;
+    grid-row: 3;
     position: relative;
     top: 5%;
     left: 30%;
-    grid-column: 4;
-    grid-row: 4;
     font-family: var(--C78secondFont);
     font-weight: lighter;
     background: rgba(0, 0, 0, 0.575);
-    height: 40px;
+    height: 33px;
     width: 50px;
     border-radius: 40px;
     padding:5px;
@@ -88,6 +90,7 @@ figcaption{
 }
 .searchBox:hover .searchTxt {
     width: 220px;
+    
     padding: 0 6px;
     line-height: 40px;
     width: 9rem;
@@ -98,8 +101,9 @@ figcaption{
 .searchBox:hover {
     font-family: var(--C78secondFont);
     background: rgba(0, 0, 0, 0.575);
-    height: 40px;
+    height: 33px;
     width: 220px;
+    transform: translateX(-190px);
     border-radius: 40px;
     padding:5px;
     text-align: center;
@@ -139,13 +143,16 @@ figcaption{
     bottom:1px;
     left: 2rem;
 }
+.menuBar {
+    display:none;
+}
 .navBar {
     grid-column-start: 3;
     grid-column-end: 6;
-    grid-row: 1/3;
+    grid-row: 2;
     text-align: left;  
     position: relative;
-    bottom:-60px;
+    bottom: 20%;
     z-index: 1;
     background: var(--linearGradientC78);
     -webkit-text-fill-color: transparent; 
@@ -158,7 +165,7 @@ figcaption{
     width: 60%;
     height: 170px;
     position: absolute;
-    top: -60px;
+    top: -45.5px;
     left: 90px;
     z-index: -1;
     transform: skew(-40deg);
@@ -211,6 +218,86 @@ article {
 .homeImage:hover {
     translate: translate-x(-100) 5s;
 }
+h1 {
+    grid-column: 4;
+    grid-row: 5;
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 30%;
+    display: inline-block;
+    font-family: var(--C78firstFont);
+    font-weight: bold;
+}
+img {
+    width: 70%;
+}
+[type=radio]{
+    display:none;  
+}
+.slider {
+    height: 35vw;
+    position: raltive;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    user-select: none;
+    margin-left: 13%;
+    padding: 10%;
+}
+.slider label {
+    margin: auto;
+    width: 70%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+#slider1:checked~#slide4, #slider2:checked~#slide5,
+#slider3:checked~#slide1, #slider4:checked~#slide2,
+#slider5:checked~#slide3 {
+   
+    transform: translate3d(20em,0,-200px);
+}
+#slider1:checked~#slide5, #slider2:checked~#slide1,
+#slider3:checked~#slide2, #slider4:checked~#slide3,
+#slider5:checked~#slide4 {
+    
+    transform: translate3d(10em,0,-100px);
+}
+#slider1:checked~#slide1, #slider2:checked~#slide2,
+#slider3:checked~#slide3, #slider4:checked~#slide4,
+#slider5:checked~#slide5 {
+    
+    transform: translate3d(0 ,0, 0);
+}
+
+#slider1:checked~#slide2, #slider2:checked~#slide3,
+#slider3:checked~#slide4, #slider4:checked~#slide5,
+#slider5:checked~#slide1 {
+    
+    transform: translate3d(-10em,0,-100px);
+}
+#slider1:checked~#slide3, #slider2:checked~#slide4,
+#slider3:checked~#slide5, #slider4:checked~#slide1,
+#slider5:checked~#slide2 {
+    
+    transform: translate3d(-20em,0,-200px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen AND (max-width:1074px)  AND (min-width:830px){
     figcaption{
         grid-column: 2/3;
@@ -369,17 +456,29 @@ article {
         text-align: right;
     }
     .navBar {
+        display:none;
         grid-column:2;
-        grid-row: 2/3;
+        grid-row: 3;
         background: var(--linearGradientC78);
         -webkit-text-fill-color: transparent; 
         -webkit-background-clip: text;
-        text-align: center;
-        margin-right: 15%;
+        text-align: left;
         margin-top: 5%;
         position: relative;
         bottom:20px;     
     }
+    .menuBar {
+        display: grid;
+        grid-column:2;
+        grid-row: 3;
+        background: var(--linearGradientC78);
+        -webkit-text-fill-color: transparent; 
+        -webkit-background-clip: text;
+        text-align: left;
+        margin-top: 5%;
+        position: relative;
+    }
+
     .navBar li {
         background: var(--linearGradientC78);
         -webkit-text-fill-color: transparent; 
