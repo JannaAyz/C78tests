@@ -3,7 +3,7 @@
     --c78orange: #EB6612;
     --c78black: black;
     --wramTransparent: #13121200;
-    --linearGradientC78: linear-gradient(to right,#FFD333 30%,#EB6612);
+    --linearGradientC78: linear-gradient(to right,rgb(255, 211, 51) 30%,#EB6612);
     --afterLinearGradientC78: -webkit-text-fill-color: transparent; -webkit-background-clip: text;
     --C78firstFont: '18 Army';
     --C78secondFont: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -16,15 +16,16 @@ body, header{
     margin: 0;
     padding: 0;
     max-width: 100vw;
-    overflow-x: hidden;    
+    overflow-x: hidden;
+  
 }
 main {
+    
     background: linear-gradient(to bottom,white,#FFD333 30%,#EB6612, black);
     height : 400vh; 
     width: 100vw;
     margin: 0;
     padding: 0;
-    margin-top: -10%; 
     overflow-x: hidden;  
 }
 header {
@@ -37,7 +38,7 @@ header {
     box-shadow: 0 0 10px ;
     font-family: var(--C78secondFont);
     grid-template-columns: 15% 11% 4% 56% 20%;
-    grid-template-rows: repeat(9, 57px);
+    grid-template-rows: repeat(3, 57px);
     grid-template-areas: 
     "logoC78 figcaption . . idButton"
     ". . navBar navBar .";
@@ -48,6 +49,7 @@ header {
     width: 100vw;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;  
 }
 .logo {
     grid-column: 1/2;
@@ -224,32 +226,106 @@ article {
 .homeImage:hover {
     translate: translate-x(-100) 5s;
 }
-h1 {
-   
-    grid-column: 4;
-    grid-row: 5;
+h1 {   
     text-align: center;
-    margin-top: 15%;
-    margin-left: 30%;
-    display: inline-block;
-    font-family: var(--C78firstFont);
-    font-weight: bold;
-  
+    justify-content: center;
+    margin: 3% 0 auto -33%;
+    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    font-size: 1rem;
 }
+.h1first {
+    font-size: 3rem;
+    animation: 4s anim-lineUp ease-out;
+    text-rendering: geometricPrecision;
+}
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }  
+      }
+.h1second{
+    font-size: 3rem;
+    margin-left: 20%;
+    animation: move-from-right 8s;   
+    color: #EB6612;
+}
+@keyframes move-from-right {
+    0% {
+    opacity: 0;
+    transform: translateX(-150%);
+    color:#000;
+    }
+    50%, 100%  {
+    opacity: 1;
+    color: #EB6612;
+    }
+}
+.h1third {
+    font-size: 5rem;
+    margin-left: 10%;
+    margin-bottom: 0;
+    animation: anim-popoutin 6s;
+   
+}
+
+@keyframes anim-popoutin {
+  0% {
+    opacity: 0;
+ }
+  50% {
+    color: black;
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    color: red;
+    transform: scale(4);
+    letter-spacing: 10px;
+    opacity: 1;
+    text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+  80% {
+    color: black;
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    /* animate nothing to add pause at the end of animation */
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+} 
 .sliders {
+    
     user-select: none;
-    width: 60vw;
+    width: 30vw;
     position: relative;
     margin: 0 auto;
     perspective: 1000px;
     transform-style: preserve-3d;
     max-width: 90%;
-    
+    z-index: 1;
+     
 }
 [type=radio]{
    display: none;
-   
-
 }
 .sliders label {
     width: 90%;
@@ -258,51 +334,199 @@ h1 {
     margin: 10% auto;
     cursor: pointer;
     transition: transform 0.4s ease;
+    z-index: 1;
  
 }
 .sliders img {
     width:90%;
     border-radius: 4px;
-    position: absolute;
+    position: relative;
     margin: 10% auto;
     cursor: pointer;
     transition: transform 0.4s ease;
-
-
+    z-index: 1;
 }
-#slider1:checked~#slide4, #slider2:checked~#slide5,
-#slider3:checked~#slide1, #slider4:checked~#slide2,
-#slider5:checked~#slide3 {
+#slider1:checked~#slide2, #slider2:checked~#slide1,
+#slider3:checked~#slide1{
+    box-shadow: 0 1px 4px 0 rgba(255,211,51,.37);
+    transform: translate3d(25rem,5px,-300px); 
    
-    transform: translate3d(15rem,5px,-300px);
-    color: rgba(250, 235, 215, 0.424);
-}
-#slider1:checked~#slide5, #slider2:checked~#slide1,
-#slider3:checked~#slide2, #slider4:checked~#slide3,
-#slider5:checked~#slide4 {
-    
-    transform: translate3d(10rem,-0.8rem,-150px);
 }
 #slider1:checked~#slide1, #slider2:checked~#slide2,
-#slider3:checked~#slide3, #slider4:checked~#slide4,
-#slider5:checked~#slide5 {
-    
+#slider3:checked~#slide3 {
+    -shadow: 0px 0px 0px 0px rgba(143, 51, 255, 0.976);
     transform: translate3d(3%, -3rem, 0) scale(1.1);
-    box-shadow: 0px 0px 30px 0px var(--c78yellow);
+}
+#slider1:checked~#slide3, #slider2:checked~#slide3,
+#slider3:checked~#slide2{
+    box-shadow: 0px 1px 4px 0px rgba(255,211,51,.37);
+    transform: translate3d(-25rem,5px,-300px);   
+}
+#slide1::after {
+    content:"Ce qui me plait dans le coaching, c’est de transmettre, d’aider et de voir les gens progresser et se sentir mieux après une bonne séance de sport.";
+    display: block;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    color: white;
+    bottom: 20vh;
+    font-size: 0.9em;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#intro{
+    margin: 0 min(5%, 320px) min(5%, 320px);
+    max-width: 60ch;
+    min-width: 45ch;
+}
+.introButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px auto;
+  width: 200px;
+  height: 100px;
+  background: rgba(243, 242, 242, 0.343);
+  border-radius: 55px;
+  font-family: var(--C78firstFont);
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  transition: 1s box-shadow;
+}
+.introButton:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  }
   
+  .introButton:hover::before, .introButton:hover::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    background: #5606d7;
+    border-radius: 75px;
+    z-index: -1;
+    animation: 1s clockwise infinite;
+  }
+  
+  .introButton:hover:after {
+    background: #0f0d0e68;
+    animation: 2s counterclockwise infinite;
+  }
+  
+  @keyframes clockwise {
+    0% {
+      top: -10px;
+      left: 2;
+    }
+    12% {
+      top: -4px;
+      left: 4px;
+    }
+    25% {
+      top: 2;
+      left: 10px;    
+    }
+    37% {
+      top: 4px;
+      left: 4px;
+    }
+    50% {
+      top: 10px;
+      left: 2;    
+    }
+    62% {
+      top: 4px;
+      left: -4px;
+    }
+    75% {
+      top: 2;
+      left: -10px;
+    }
+    87% {
+      top: -4px;
+      left: -4px;
+    }
+    100% {
+      top: -10px;
+      left: 2;    
+    }
+  }
+  
+  @keyframes counterclockwise {
+    0% {
+      top: -10px;
+      right: 2;
+    }
+    12% {
+      top: -4px;
+      right: 4px;
+    }
+    25% {
+      top: 2;
+      right: 10px;    
+    }
+    37% {
+      top: 4px;
+      right: 4px;
+    }
+    50% {
+      top: 10px;
+      right: 2;    
+    }
+    62% {
+      top: 4px;
+      right: -4px;
+    }
+    75% {
+      top: 2;
+      right: -10px;
+    }
+    87% {
+      top: -4px;
+      right: -4px;
+    }
+    100% {
+      top: -10px;
+      right: 2;    
+    }
+  }
+h2 {
+  display: block;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
 }
-
-#slider1:checked~#slide2, #slider2:checked~#slide3,
-#slider3:checked~#slide4, #slider4:checked~#slide5,
-#slider5:checked~#slide1 {
-    transform: translate3d(-10rem,-0.8rem,-150px);
-    
+.coachs {
+    display: block;
+    user-select: none;
+    width: 60vw;
+    position: relative;
+    margin: 0 auto;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    max-height: 60%;
+    margin: -5% 0 auto max(25%, 10%);   
+    box-sizing: border-box;
 }
-#slider1:checked~#slide3, #slider2:checked~#slide4,
-#slider3:checked~#slide5, #slider4:checked~#slide1,
-#slider5:checked~#slide2 {
-    
-    transform: translate3d(-18rem,5px,-300px);
+.coach3Text{
+    box-sizing: content-box;
+    top: 20rem;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 

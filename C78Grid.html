@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="StylesC78Grid.css">
+    <script type="text/javascript" src="C78Grid.js"></script>
     <title>C78 test boot</title>
 </head>
 
@@ -15,7 +16,7 @@
         <div class="container">
             <figure class="logo">
                 <img class="logoC78" src="logo c78 final sur fond transparent.png" alt="Logotype de C78">
-                <figcaption class="legend">CROSSFIT<span style="color: #eb651200;">..</span>A<span
+                <figcaption class="legend">CROSSFIT<span style="color: #eb651200;">.</span>A<span
                         style="color: #eb651200;">.</span>CHESNAY</figcaption>
             </figure>
         </div>
@@ -27,7 +28,6 @@
                 <li><a href="#">Juniors</a></li>
                 <li><a href="#">Reserver</a></li>
                 <li><a href="#">Carte</a></li>
-                <li><a href="#">FAQ</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>          
         </nav>
@@ -40,31 +40,45 @@
         </div>    
     </header>
     <main>
-      
-        <h1>Château, Chênes et CROSSFIT</h1>
-        
-        <section class="sliders">
-            <input type="radio" name="slider" id="slider1">
-            <input type="radio" name="slider" id="slider2">
-            <input type="radio" name="slider" id="slider3" checked>
-            <input type="radio" name="slider" id="slider4">
-            <input type="radio" name="slider" id="slider5">
-            <label for="slider1" id="slide1">
-                <img src="photosCrossfit\2carrousel.jpg">
-            </label>
-            <label for="slider2" id="slide2">
-                <img src="photosCrossfit\3carrousel.jpg">
-            </label>
-            <label for="slider3" id="slide3">
-                <img src="photosCrossfit\4carrousel.jpg">
-            </label>
-            <label for="slider4" id="slide4">
-                <img src="photosCrossfit\5carrousel.jpg">
-            </label>
-            <label for="slider5" id="slide5">
-                <img src="photosCrossfit\6carrousel.jpg">
-            </label>
+         
+        <article>
+        <section id="intro">
+        <h1><span class="h1first">Château</span><br><span class="h1second">Chênes </span><span>et</span><br><span class="h1third">CROSSFIT</span></h1>
+        <p>Vous avez sûrement déjà entendu parler de ce nouveau sport, très en vogue, qu’est le crossfit. Ce dernier a en effet vu le nombre de ses adeptes se démultiplier au cours de ces dernières années.</p>
         </section>
+        </article> 
+
+        <h2>Nos coachs certifiés</h2>
+    <section class="sliders" style="display:bloc;">
+        <input type="radio" name="slider" id="slider1">
+        <input type="radio" name="slider" id="slider2"checked>
+        <input type="radio" name="slider" id="slider3">
+        <label for="slider1" id="slide1">
+            <img onmouseover="textCoach()" src="photosCrossfit\coach2.jpg" alt="coach2">
+        </label>
+        <label for="slider2" id="slide2">
+            <img src="photosCrossfit\coach1.jpg" alt="coach1">
+            <p class="coach1Text">
+                <span class="coach1Name">Valerio</span>
+                <span class="coach1Present">Ma méthode de coaching consiste à adapter vos séances en fonction de votre niveau et vos objectifs. Je prône le sport santé avant tout.</span>
+            </p>
+            </div>
+        </label>
+        <label for="slider3" id="slide3">
+            <div>
+            <img src="photosCrossfit\coach3.jpg" alt="coach3">
+            <div class="coach3Text">
+                <div class="coach3Name">Kevin</div>
+                <p class="coach3Present">Mon but est de vous transmettre ma passion, vous permettre d'atteindre vos objectifs tout en passant un moment agréable.</p>
+            </div>
+            </div>
+        </label>
+    </section>
+    <section>
+        <h2 style="display:block;margin:5vh auto auto;">Techniques du CrossFit</h2>
+    </section>      
+    </article> 
+
             <nav class="navbarr" style="display:none;">
                 <ul class="nav-links">
                     <!-- USING CHECKBOX HACK -->
