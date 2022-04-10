@@ -19,8 +19,8 @@
     
     }
     main {
-        background: linear-gradient(to bottom,white,#FFD333 30%,#EB6612, black);
-        height : 400vh; 
+        background: linear-gradient(to bottom,white,#FFD333 30%, white, black);
+        height : 500vh; 
         max-width: 100vw;
         z-index: -1;
     }
@@ -64,8 +64,6 @@
    }
     /* LOGO */
     .logo {
-        grid-column: 1/2;
-        grid-row: 1/3;
         display: flex;
         flex-direction: row;  
         font-weight: bolder;
@@ -216,6 +214,7 @@
     padding:5px;
     transition: 0.3s;
     z-index: 1;
+    transform-origin: 50px 0;
 }
 .searchBox:hover .searchTxt {
     width: 220px;
@@ -232,12 +231,13 @@
     background: rgba(0, 0, 0, 0.575);
     height: 33px;
     width: 220px;
+    transform-origin: 50px 0;
     /*transform: translateX(-190px);*/
     border-radius: 40px;
     padding:5px;
     text-align: center;
     z-index: 1;
-    display: inline-block;
+    display: block;
 }
 /*.searchBox:hover .searchBtn {
     S
@@ -347,7 +347,7 @@ h1 {
     font-weight: 590; 
     letter-spacing: 0.5rem;  
     z-index: 1;
-    text-shadow: 0 2mm 10px rgba(13, 13, 10, 0.46);
+    text-shadow: 0 2mm 10px rgba(13, 13, 10, 0.614);
     color: var(--c78orange);
 }
 
@@ -383,15 +383,16 @@ h1 {
     z-index: 1;
   }
 } 
-#intro p {
+#intro p, #intro2 p  {
     display: flex;
     justify-content: center;
     justify-content: space-around;
     margin-left: 20%;
     margin-right: 20%;
    /* margin: 0 20% 30%;*/
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5em;
+    font-weight: 500;
     text-align: center;
     line-height: 1.5;
 }
@@ -417,7 +418,6 @@ h1 {
     margin: 0;
     filter: drop-shadow(0 4mm 6mm red);
 }
-
 /* ICON'S IMAGES*/
 
 .dumbbellIcon {
@@ -440,13 +440,13 @@ h1 {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
   
-  .button {
+  .buttonJnr, .buttonAdl {
     margin-top: 3%;
     margin-bottom: 7%;
-    min-width: 300px;
+    min-width: 15vw;
     min-height: 60px;
     font-family: var(--C78firstFont);
     font-size: 22px;
@@ -466,11 +466,11 @@ h1 {
     padding: 2% 1%;
     }
   
-  .button::before {
+  .buttonJnr::before, .buttonAdl::before {
     content: '';
     border-radius: 40px;
     padding: 2% 1%;
-    width: calc(300px + 12px);
+    width: calc(15vw + 8px);
     height: calc(60px + 12px);
     border: 6px solid var(--c78orange);
     box-shadow: 0 0 60px rgba(235, 102, 18,.64);
@@ -484,7 +484,7 @@ h1 {
   }
   @keyframes pulse {
     0% {
-        width: calc(300px - 12px);
+        width: calc(15vwpx - 12px);
         height: calc(60px - 12px);
         opacity: 0.5;
       }
@@ -505,20 +505,53 @@ h1 {
         border: 8px solid #00FFCB;
     }*/
     100% {
-        width: calc(300px + 20px);
+        width: calc(15vw + 20px);
         height: calc(60px + 20px);
         opacity: 0; 
         border:12px solid var(--c78orange);
         border-radius: 80px;
     }
   }
+  .buttonAdl::before {
+    animation: pulse2 8s infinite;
+  }
+  @keyframes pulse2 {
+  0% {
+    width: calc(15vwpx - 12px);
+    height: calc(60px - 12px);
+    opacity: 0.5;
+  }
+/*20% {
+    width: calc(300px + 12px);
+    height: calc(60px + 12px);
+    opacity: 0.5;
+}
+40% {
+    width: calc(300px + 14px);
+    height: calc(60px + 14px);
+    opacity: 0.5;
+}
+90% {
+    width: calc(300px + 16px);
+    height: calc(60px + 16px);
+    opacity: 0.3;
+    border: 8px solid #00FFCB;
+}*/
+100% {
+    width: calc(15vw + 20px);
+    height: calc(60px + 20px);
+    opacity: 0; 
+    border:12px solid var(--c78orange);
+    border-radius: 80px;
+}
+}
   
-  .button:hover, .button:focus {
+  .buttonJnr:hover, .buttonJnr:focus, .buttonAdl:hover, .buttonAdl:focus {
     color: #313133;
     transform: translateY(-6px);
   }
   
-  .button:hover::before, .button:focus::before {
+  .buttonJnr:hover::before, .buttonJnr:focus::before, .buttonAdl:hover::before, .buttonAdl:focus::before {
     opacity: 1;
     animation: none;
   }
@@ -532,7 +565,7 @@ h2 {
     font-size: 2rem;
     margin: 3rem auto 0;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
     
 }
 h2 > a {
@@ -660,4 +693,27 @@ h2 > a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+/*Map*/
+.responsiveMap{
+  overflow:hidden;
+  padding-bottom:80vh;
+  margin-top: 15vh;
+  position:relative;
+  height:0;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.responsiveMap iframe{
+  margin-left: calc(100vw - 95%);
+  margin-right: calc(100vw - 95%);
+  top: 20px;
+  /*max-width: 90%;
+  max-height: 100%;*/
+  position: absolute;
+  
 }
