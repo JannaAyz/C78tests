@@ -164,43 +164,7 @@
     border-radius: 5px;
    }
    /* APPLYING MEDIA QUERIES */
-   @media (max-width: 768px) {
-   .menu { 
-    display:none;
-    position: absolute;
-    background-color:teal;
-    right: 0;
-    left: 0;
-    text-align: center;
-    padding: 16px 0;
-   }
-   .menu li:hover {
-    display: inline-block;
-    background-color:#4c9e9e;
-    transition: 0.3s ease;
-   }
-   .menu li + li {
-    margin-top: 12px;
-   }
-   input[type=checkbox]:checked ~ .menu{
-    display: block;
-    z-index: 3;
-   }
-   .hamburger {
-    justify-self: flex-end;
-    margin: auto 150% auto;
-    display: block;
-   }
-   .dropdown {
-    left: 50%;
-    top: 30px;
-    transform: translateX(35%);
-    perspective: 1000px;
-   }
-   .dropdown li:hover {
-    background-color: #4c9e9e;
-   }
-   }
+   
    .searchBox {
     position: absolute;
     top: 50%;
@@ -418,6 +382,151 @@ h1 {
     margin: 0;
     filter: drop-shadow(0 4mm 6mm red);
 }
+
+/* ASIDE */
+/*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body{
+	height: 100vh;
+	display: flex;
+	background: #262626;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}*/
+
+aside ul{
+  position: fixed;
+  margin-top: -550px;
+  margin-left: 85vw;
+	display: flex;
+  list-style: none;
+  flex-direction: column;
+	align-items: center;
+  gap: 7px;
+}
+
+aside ul li{
+	position: relative;
+	display: inline;
+  text-align: center;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	font-size: 20px;
+	line-height: 40px;
+	color: black;
+	background-color: #17151500;
+	cursor: pointer;
+	border-radius: 50%;
+	margin: 0 15px;
+}
+
+aside ul li:before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	background-color:  #0a83ed00;
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	z-index: -1;
+	transform: scale(0.9);
+	transition: 0.5s;
+}
+
+/*aside ul li:nth-child(1):hover:before{
+	background-color:  #0a83ed00;
+}
+
+aside ul li:nth-child(2):hover:before{
+	background-color:  #04a2ffb3;
+}
+
+aside ul li:nth-child(3):hover:before{
+	background-color: #e23670;
+}
+
+aside ul li:nth-child(4):hover:before{
+	background-color: #2a6cbb;
+}
+
+aside ul li:nth-child(5):hover:before{
+	background-color:  #ff1a1a;
+}*/
+
+aside ul li:hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15 #0A82ED;
+	transform: scale(1.2);
+}
+
+aside ul li:nth-child(1):hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15  #0A82ED;
+	transform: scale(1.2);
+}
+
+aside ul li:nth-child(2):hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15  #04a2ffb3;
+	transform: scale(1.2);
+}
+
+aside ul li:nth-child(3):hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15  #e23670;
+	transform: scale(1.2);
+}
+
+aside ul li:nth-child(4):hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15  #2a6cbb;
+	transform: scale(1.2);
+}
+
+aside ul li:nth-child(5):hover:before{
+	filter: blur(2px);
+	box-shadow: 0 0 15  #ff1a1a;
+	transform: scale(1.2);
+}
+
+aside ul li:hover:nth-child(1){
+	color: #0A82ED;
+	box-shadow: 0 0 15px #0A82ED;
+	text-shadow: 0 0 15px #0A82ED;
+}
+
+aside ul li:hover:nth-child(2){
+	color: #04a2ffb3;
+	box-shadow: 0 0 15px #04a2ffb3;
+	text-shadow: 0 0 15px #04a2ffb3;
+}
+
+aside ul li:hover:nth-child(3){
+	color: #e23670;
+	box-shadow: 0 0 15px #e23670;
+	text-shadow: 0 0 15px #e23670;
+}
+
+aside ul li:hover:nth-child(4){
+	color: #2a6cbb;
+	box-shadow: 0 0 15px #2a6cbb;
+	text-shadow: 0 0 15px #2a6cbb;
+}
+
+aside ul li:hover:nth-child(5){
+	color: #ff1a1a;
+	box-shadow: 0 0 15px #ff1a1a;
+	text-shadow: 0 0 15px #ff1a1a;
+}
+
 /* ICON'S IMAGES*/
 
 .dumbbellIcon {
@@ -694,7 +803,7 @@ h2 > a {
     align-items: center;
     text-align: center;
 }
-/*Map*/
+/*MAP*/
 .responsiveMap{
   overflow:hidden;
   padding-bottom:80vh;
@@ -717,3 +826,45 @@ h2 > a {
   position: absolute;
   
 }
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+@media (max-width: 768px) {
+  header {
+    background-position: left;
+  }
+  .menu { 
+   display:none;
+   position: absolute;
+   background-color:teal;
+   right: 0;
+   left: 0;
+   text-align: center;
+   padding: 16px 0;
+  }
+  .menu li:hover {
+   display: inline-block;
+   background-color:#4c9e9e;
+   transition: 0.3s ease;
+  }
+  .menu li + li {
+   margin-top: 12px;
+  }
+  input[type=checkbox]:checked ~ .menu{
+   display: block;
+   z-index: 3;
+  }
+  .hamburger {
+   justify-self: flex-end;
+   margin: auto 150% auto;
+   display: block;
+  }
+  .dropdown {
+   left: 50%;
+   top: 30px;
+   transform: translateX(35%);
+   perspective: 1000px;
+  }
+  .dropdown li:hover {
+   background-color: #4c9e9e;
+  }
+  }

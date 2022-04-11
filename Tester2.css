@@ -1,59 +1,34 @@
-*, *:after, *:before {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
+.clickOnCoach .portrtCoach{
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  border-radius: 0 0 0 0.25em;
+  max-height: 20vh;
+  
 }
-* {margin:0;padding:0;border:0 none;position: relative; outline: none;
+.clickOnCoach ul {
+  list-style: none;
 }
-html, body {
-  background:  #004050;
-  font-family: Quando;
-  font-weight: 300;
-  width: 100%;
+.clickOnCoach span {
+  display: none;
 }
-h2 {
-  background: #0D757D;
-  width: 100%;
-  /*min-height: 200px;
-  line-height: 200px;*/
-  font-size: 3rem;
-  font-weight: normal;
-  text-align: center;
-  color: rgba(0,0,0,.4);
-  margin: 3rem auto 0;
+.clickOnCoach #checkNatalie:checked + span {
+  display: block; 
 }
-h2 > a:before{
-  text-decoration: none;
-  color: rgba(0,0,0,.4);
-  /*z-index: 1;*/
+#checkNatalie {
+ display: none;
 }
-
-h2:before {
-  content: "";
+label:checked {
+  z-index: -1;
+}
+.clickOnCoach #checkNatalie:checked + span img{
+  display: inline;
+  max-height: 80vh;
+  z-index: 2;
+  position: relative;
+ }
+ .clickOnCoach #checkNatalie:checked + span p{
   position: absolute;
-  width: 100%;
-  height: 3px;
-  bottom: -10px;
-  left: 0;
-  background: #9CF5A6;
-  /*visibility: hidden;*/
-  border-radius: 50px;
-  /*transform: scaleX(0.3);*/
-  /*transition: .25s linear;*/
-  animation: line 20s infinite;
-}
-/*h2 > a:hover:before,
-h2 > a:focus:before {
-  /*visibility: visible;
-    transform: scaleX(1);
-}*/
-@keyframes line {
-  0% {
-    transform: scaleX(0.5);
-  }
-  50% {
-      transform: scaleX(1);
-     }
-  100% {
-    transform: scaleX(0.5);
-  }   
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.329);
+ }
