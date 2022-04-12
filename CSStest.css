@@ -196,15 +196,15 @@
     height: 33px;
     width: 220px;
     transform-origin: 50px 0;
-    /*transform: translateX(-190px);*/
+    transform: translateX(-90px);
     border-radius: 40px;
     padding:5px;
     text-align: center;
     z-index: 1;
     display: block;
+    transform-origin: 50px 0;
 }
 /*.searchBox:hover .searchBtn {
-    S
 }*/
 .searchBtn:hover{
     background: white;
@@ -223,6 +223,7 @@
     position: relative;
     top:1px;
     z-index: 1;
+    transform-origin: 10px 0;
 }
 .searchIcon{
     max-width:60%;
@@ -402,7 +403,7 @@ body{
 aside ul{
   position: fixed;
   margin-top: -550px;
-  margin-left: 85vw;
+  margin-left: 90vw;
 	display: flex;
   list-style: none;
   flex-direction: column;
@@ -549,7 +550,7 @@ aside ul li:hover:nth-child(5){
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   
   .buttonJnr, .buttonAdl {
@@ -663,6 +664,9 @@ aside ul li:hover:nth-child(5){
   .buttonJnr:hover::before, .buttonJnr:focus::before, .buttonAdl:hover::before, .buttonAdl:focus::before {
     opacity: 1;
     animation: none;
+  }
+  .buttonJnr + .buttonAdl {
+    gap : max(30px);
   }
 
 h2 {

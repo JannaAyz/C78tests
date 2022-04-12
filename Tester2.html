@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="Tester2.js"></script>
     <link rel="stylesheet" href="Tester2.css".css">
+    
+    <script src="https://kit.fontawesome.com/b9f82c85b5.js" crossorigin="anonymous"></script>
     <title>Tests 2</title>
 </head>
 <body>
@@ -15,14 +18,22 @@
           <figure><img class="portrtCoach" src="photosCrossfit\coach1.jpg" alt="coach Valerio"><figcaption>Vlerio</figcaption></figure>
           <span>Ce qui me plait dans le coaching, c’est de transmettre, d’aider et de voir les gens progresser et se sentir mieux après une bonne séance de sport.</span>
         </li>
+        
         <li>
-          <input id="checkNatalie" type="checkbox">
-          <span>
-            <img class="coachNathalie" src="photosCrossfit\coach2.jpg" alt="coach Nathalie"> 
-            <p>Ce qui me plait dans le coaching, c’est de transmettre, d’aider et de voir les gens progresser et se sentir mieux après une bonne séance de sport.</p>
-          </span>
-          <label for="checkNatalie">
-          <img class="portrtCoach" src="photosCrossfit\coach2.jpg" alt="coach Nathalie"><p>Nathalie</p>
+          <input id="checkNatalie" onclick="truc()" type="checkbox">
+          <div id="bigCoach" class="bigCoach">
+              <img id="coachNathalie" class="coachNathalie" src="photosCrossfit\coach2.jpg" alt="coach Nathalie"> 
+
+
+
+              <img id="closeBtnNathalie" class="closeBtnNathalie" onclick="closeImg()" src="photosCrossfit\heart-pulse.png" alt="close Button"> 
+              
+              
+              <p id="txtNathalie"  class="txtNathalie">Ce qui me plait dans le coaching, c’est de transmettre, d’aider et de voir les gens progresser et se sentir mieux après une bonne séance de sport.</p>
+          </div>
+          <label id="labelNathalie" for="checkNatalie">
+              <img class="portrtCoach" src="photosCrossfit\coach2.jpg" alt="coach Nathalie"><p>Nathalie</p>
+              
           </label>
           
             
