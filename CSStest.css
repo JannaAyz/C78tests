@@ -402,7 +402,7 @@ body{
 
 aside ul{
   position: fixed;
-  margin-top: -550px;
+  margin-top: -640px;
   margin-left: 90vw;
 	display: flex;
   list-style: none;
@@ -462,70 +462,141 @@ aside ul li:nth-child(5):hover:before{
 	background-color:  #ff1a1a;
 }*/
 
+#asideLi1 {
+  animation : apparition1 8s;
+}
+@keyframes  apparition1 {
+0% {
+  opacity: 0;
+}
+86% {
+  opacity: 0;
+}
+100% {
+  opacity: 1;
+}
+}
+#asideLi2 {
+  animation : apparition2 8s;
+}
+@keyframes  apparition2 {
+  0% {
+    opacity: 0;
+  }
+  87% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#asideLi3 {
+  animation : apparition3 8s;
+}
+@keyframes  apparition3 {
+  0% {
+    opacity: 0;
+  }
+  89% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#asideLi4 {
+  animation : apparition4 8s;
+}
+@keyframes  apparition4 {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#asideLi5 {
+  animation : apparition5 8s;
+}
+@keyframes  apparition5 {
+  0% {
+    opacity: 0;
+  }
+  91% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 aside ul li:hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15 #0A82ED;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:nth-child(1):hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15  #0A82ED;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:nth-child(2):hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15  #04a2ffb3;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:nth-child(3):hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15  #e23670;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:nth-child(4):hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15  #2a6cbb;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:nth-child(5):hover:before{
 	filter: blur(2px);
-	box-shadow: 0 0 15  #ff1a1a;
+	box-shadow: 0 0 15 var(--c78orange);
 	transform: scale(1.2);
 }
 
 aside ul li:hover:nth-child(1){
-	color: #0A82ED;
-	box-shadow: 0 0 15px #0A82ED;
-	text-shadow: 0 0 15px #0A82ED;
+	color: var(--c78orange);
+	box-shadow: 0 0 15px var(--c78orange);
+	text-shadow: 0 0 15px var(--c78orange);
 }
 
 aside ul li:hover:nth-child(2){
-	color: #04a2ffb3;
-	box-shadow: 0 0 15px #04a2ffb3;
-	text-shadow: 0 0 15px #04a2ffb3;
+	color: var(--c78orange);
+	box-shadow: 0 0 15px var(--c78orange);
+	text-shadow: 0 0 15px var(--c78orange);
 }
 
 aside ul li:hover:nth-child(3){
-	color: #e23670;
-	box-shadow: 0 0 15px #e23670;
-	text-shadow: 0 0 15px #e23670;
+	color:var(--c78orange);
+	box-shadow: 0 0 15px var(--c78orange);
+	text-shadow: 0 0 15px var(--c78orange);
 }
 
 aside ul li:hover:nth-child(4){
-	color: #2a6cbb;
-	box-shadow: 0 0 15px #2a6cbb;
-	text-shadow: 0 0 15px #2a6cbb;
+	color: var(--c78orange);
+	box-shadow: 0 0 15px var(--c78orange);
+	text-shadow: 0 0 15px var(--c78orange);
 }
 
 aside ul li:hover:nth-child(5){
-	color: #ff1a1a;
-	box-shadow: 0 0 15px #ff1a1a;
-	text-shadow: 0 0 15px #ff1a1a;
+	color: var(--c78orange);
+	box-shadow: 0 0 15px var(--c78orange);
+	text-shadow: 0 0 15px var(--c78orange);
 }
 
 /* ICON'S IMAGES*/
